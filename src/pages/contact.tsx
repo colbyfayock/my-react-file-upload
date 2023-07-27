@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
+import { useDropzone} from 'react-dropzone';
 
 import Layout from '@/components/Layout';
 import Container from '@/components/Container';
@@ -9,6 +10,20 @@ import Button from '@/components/Button';
 
 
 function Contact() {
+  const onDrop = useCallback((acceptedFiles: Array<File>) => {
+    const file = new FileReader;
+
+    file.onload = function() {
+      setPreview(file.result);
+    }
+
+    file.readAsDataURL(acceptedFiles[0])
+  }, [])
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop
+  });
+
   const [file, setFile] = useState<File | undefined>();
   const [preview, setPreview] = useState<string | ArrayBuffer | null>(null);
 
@@ -75,13 +90,14 @@ function Contact() {
 
           <FormRow className="mb-5">
             <FormLabel htmlFor="image">Image</FormLabel>
-            <input
-              id="image"
-              type="file"
-              name="image"
-              accept="image/*"
-              onChange={handleOnChange}
-            />
+            <div {...getRootProps()}>
+              <input {...getInputProps()} />
+              {
+                isDragActive ?
+                  <p>Drop the files here ...</p> :
+                  <p>Drag 'n' drop some files here, or click to select files</p>
+              }
+            </div>
           </FormRow>
 
           {preview && (
