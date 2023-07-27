@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import Layout from '@/components/Layout';
 import Container from '@/components/Container';
 import FormRow from '@/components/FormRow';
@@ -7,12 +9,22 @@ import Button from '@/components/Button';
 
 
 function Contact() {
+  const [file, setFile] = useState<File | undefined>();
+
   /**
    * handleOnSubmit
    */
 
   async function handleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
+  }
+
+  function handleOnChange(e: React.FormEvent<HTMLInputElement>) {
+    const target = e.target as HTMLInputElement & {
+      files: FileList;
+    }
+    
+    setFile(target.files[0]);
   }
 
   return (
@@ -41,7 +53,12 @@ function Contact() {
 
           <FormRow className="mb-5">
             <FormLabel htmlFor="image">Image</FormLabel>
-            <input id="image" type="file" name="image" />
+            <input
+              id="image"
+              type="file"
+              name="image"
+              onChange={handleOnChange}
+            />
           </FormRow>
           <Button>Submit</Button>
         </form>
