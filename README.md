@@ -1,7 +1,17 @@
-# Demo React Form
+# Uploading Files in React
 
-## Getting Started
+Demo for tutorial [Upload Files in React - Typescript, Drag and Drop, & Form Examples](https://www.youtube.com/watch?v=8uChP5ivQ1Q)
 
-```
-npx degit colbyfayock/demo-react-form my-react-file-upload
-```
+📝 Article: https://spacejelly.dev/posts/uploading-files-in-react-from-a-form-with-drag-and-drop/
+
+📺 YouTube: https://www.youtube.com/watch?v=8uChP5ivQ1Q
+
+🚀 Demo: 
+
+## More tutorials and walkthroughs
+
+🐦 [Follow me on Twitter](https://twitter.com/colbyfayock)
+
+📺 [Subscribe on YouTube](https://www.youtube.com/colbyfayock)
+
+✉️ [Sign Up for My Newsletter](https://colbyfayock.com/newsletter)
