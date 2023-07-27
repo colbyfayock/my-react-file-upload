@@ -46,22 +46,8 @@ function Contact() {
       method: 'POST',
       body: formData
     }).then(r => r.json());
-  }
 
-  function handleOnChange(e: React.FormEvent<HTMLInputElement>) {
-    const target = e.target as HTMLInputElement & {
-      files: FileList;
-    }
-    
-    setFile(target.files[0]);
-
-    const file = new FileReader;
-
-    file.onload = function() {
-      setPreview(file.result);
-    }
-
-    file.readAsDataURL(target.files[0])
+    console.log('results', results);
   }
 
   return (
