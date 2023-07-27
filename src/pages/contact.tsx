@@ -10,6 +10,7 @@ import Button from '@/components/Button';
 
 function Contact() {
   const [file, setFile] = useState<File | undefined>();
+  const [preview, setPreview] = useState<string | ArrayBuffer | null>(null);
 
   /**
    * handleOnSubmit
@@ -38,6 +39,14 @@ function Contact() {
     }
     
     setFile(target.files[0]);
+
+    const file = new FileReader;
+
+    file.onload = function() {
+      setPreview(file.result);
+    }
+
+    file.readAsDataURL(target.files[0])
   }
 
   return (
@@ -74,6 +83,13 @@ function Contact() {
               onChange={handleOnChange}
             />
           </FormRow>
+
+          {preview && (
+            <p className="mb-5">
+              <img src={preview as string} alt="Upload preview" />
+            </p>
+          )}
+
           <Button>Submit</Button>
         </form>
 
