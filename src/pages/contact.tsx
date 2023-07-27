@@ -17,6 +17,19 @@ function Contact() {
 
   async function handleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
+
+    if ( typeof file === 'undefined' ) return;
+
+    const formData = new FormData();
+
+    formData.append('file', file);
+    formData.append('upload_preset', 'test-react-uploads-unsigned');
+    formData.append('api_key', import.meta.env.VITE_CLOUDINARY_API_KEY);
+
+    const results = await fetch('https://api.cloudinary.com/v1_1/colbycloud-examples/image/upload', {
+      method: 'POST',
+      body: formData
+    }).then(r => r.json());
   }
 
   function handleOnChange(e: React.FormEvent<HTMLInputElement>) {
