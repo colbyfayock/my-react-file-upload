@@ -20,7 +20,7 @@ function Contact() {
     file.readAsDataURL(acceptedFiles[0])
   }, [])
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+  const { acceptedFiles, getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop
   });
 
@@ -38,11 +38,11 @@ function Contact() {
 
     const formData = new FormData();
 
-    formData.append('file', file);
-    formData.append('upload_preset', 'test-react-uploads-unsigned');
+    formData.append('file', acceptedFiles[0]);
+    formData.append('upload_preset', '<Your Upload Preset>');
     formData.append('api_key', import.meta.env.VITE_CLOUDINARY_API_KEY);
 
-    const results = await fetch('https://api.cloudinary.com/v1_1/colbycloud-examples/image/upload', {
+    const results = await fetch('https://api.cloudinary.com/v1_1/<Your Cloud Name>/image/upload', {
       method: 'POST',
       body: formData
     }).then(r => r.json());
