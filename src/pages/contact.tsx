@@ -70,6 +70,7 @@ function Contact() {
               id="image"
               type="file"
               name="image"
+              accept="image/*"
               onChange={handleOnChange}
             />
           </FormRow>
