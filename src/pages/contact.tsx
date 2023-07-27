@@ -38,6 +38,11 @@ function Contact() {
             <FormLabel htmlFor="message">Message</FormLabel>
             <InputText id="message" name="message" type="text" />
           </FormRow>
+
+          <FormRow className="mb-5">
+            <FormLabel htmlFor="image">Image</FormLabel>
+            <input id="image" type="file" name="image" />
+          </FormRow>
           <Button>Submit</Button>
         </form>
 
