@@ -24,7 +24,6 @@ function Contact() {
     onDrop
   });
 
-  const [file, setFile] = useState<File | undefined>();
   const [preview, setPreview] = useState<string | ArrayBuffer | null>(null);
 
   /**
@@ -34,7 +33,7 @@ function Contact() {
   async function handleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
 
-    if ( typeof file === 'undefined' ) return;
+    if ( typeof acceptedFiles[0] === 'undefined' ) return;
 
     const formData = new FormData();
 
