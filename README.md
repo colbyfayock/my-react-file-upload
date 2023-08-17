@@ -12,6 +12,6 @@ Demo for tutorial [Upload Files in React - Typescript, Drag and Drop, & Form Exa
 
 🐦 [Follow me on Twitter](https://twitter.com/colbyfayock)
 
-📺 [Subscribe on YouTube](https://www.youtube.com/colbyfayock)
+📺 [Subscribe on YouTube](https://kdta.io/l0f7g)
 
 ✉️ [Sign Up for My Newsletter](https://colbyfayock.com/newsletter)
