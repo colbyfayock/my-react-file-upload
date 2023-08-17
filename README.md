@@ -2,7 +2,7 @@
 
 Demo for tutorial [Upload Files in React - Typescript, Drag and Drop, & Form Examples](https://www.youtube.com/watch?v=8uChP5ivQ1Q)
 
-📝 Article: https://spacejelly.dev/posts/uploading-files-in-react-from-a-form-with-drag-and-drop/
+📝 Article: https://kdta.io/b0WwW
 
 📺 YouTube: https://www.youtube.com/watch?v=8uChP5ivQ1Q
 
