@@ -1,23 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Route } from 'wouter';
 
-import Home from '@/pages/index';
-import Contact from '@/pages/contact';
-
-import '@/styles/global.css'
-
-const Router = () => {
-  return (
-    <>
-      <Route path="/" component={Home} />
-      <Route path="/contact" component={Contact} />
-    </>
-  )
-}
+import App from '@/App';
+import '@/styles/global.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Router />
+    <App />
   </React.StrictMode>,
-)
+);

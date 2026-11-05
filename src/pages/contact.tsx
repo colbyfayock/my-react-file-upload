@@ -10,6 +10,8 @@ import Button from '@/components/Button';
 
 
 function Contact() {
+  const [preview, setPreview] = useState<string | ArrayBuffer | null>(null);
+
   const onDrop = useCallback((acceptedFiles: Array<File>) => {
     const file = new FileReader;
 
@@ -24,7 +26,6 @@ function Contact() {
     onDrop
   });
 
-  const [preview, setPreview] = useState<string | ArrayBuffer | null>(null);
 
   /**
    * handleOnSubmit
@@ -57,7 +58,7 @@ function Contact() {
           Contact Us
         </h1>
         
-        <form className="max-w-md border border-gray-200 rounded p-6 mx-auto" onSubmit={handleOnSubmit}>
+        <form className="max-w-md border border-gray-200 rounded-sm p-6 mx-auto" onSubmit={handleOnSubmit}>
           <FormRow className="mb-5">
             <FormLabel htmlFor="name">Name</FormLabel>
             <InputText id="name" name="name" type="text" />
