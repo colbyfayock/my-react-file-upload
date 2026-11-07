@@ -6,7 +6,6 @@ Demo for tutorial [Upload Files in React - Typescript, Drag and Drop, & Form Exa
 
 📺 YouTube: https://www.youtube.com/watch?v=8uChP5ivQ1Q
 
-🚀 Demo: https://my-react-file-upload.vercel.app/
 
 ## More tutorials and walkthroughs
 
